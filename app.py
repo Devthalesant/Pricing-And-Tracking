@@ -11,19 +11,16 @@ cover_page = st.Page(
 sales_page = st.Page(
     "views/sales_view.py",
     title="Sales View",
-    default=True,
 )
 
 appointments_page = st.Page(
     "views/appointments_view.py",
     title="Appointments View",
-    default=True,
 )
 
 merged_page = st.Page(
     "views/merged_view.py",
     title="Merged View",
-    default=True,
 )
 
 # --- NAVIGATION SETUP WITH SECTIONS ---
