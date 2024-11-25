@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- PAGE SETUP ---
 sample_page = st.Page(
-    "/views/cover.py",
+    "views/cover.py",
     title="Sample Page 1",
     icon=":material/thumb_up:",
     default=True,
