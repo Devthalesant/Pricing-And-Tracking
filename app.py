@@ -12,20 +12,20 @@ cover_page = st.Page(
 sales_page = st.Page(
     "views/sales_view.py",
     title="Sales View",
-    icon="money",
+    icon="🏠",
     default=True,
 )
 
 appointments_page = st.Page(
     "views/appointments_view.py",
     title="Appointments View",
-    icon=":calendar:",
+    icon=":🏠:",
 )
 
 merged_page = st.Page(
     "views/merged_view.py",
     title="Merged View",
-    icon=":bar_chart:",
+    icon=":🏠:",
 )
 
 # --- NAVIGATION SETUP WITH SECTIONS ---
