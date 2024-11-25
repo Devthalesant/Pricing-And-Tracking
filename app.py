@@ -5,14 +5,12 @@ import pandas as pd
 cover_page = st.Page(
     "views/cover.py",
     title="Cover",
-    icon="🏠",
     default=True,
 )
 
 sales_page = st.Page(
     "views/sales_view.py",
     title="Sales View",
-    icon="🏠",
     default=True,
 )
 
@@ -25,7 +23,7 @@ appointments_page = st.Page(
 merged_page = st.Page(
     "views/merged_view.py",
     title="Merged View",
-    icon=":🏠:",
+    default=True,
 )
 
 # --- NAVIGATION SETUP WITH SECTIONS ---
