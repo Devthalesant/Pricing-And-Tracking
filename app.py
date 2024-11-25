@@ -6,7 +6,7 @@ cover_page = st.Page(
     "views/cover.py",
     title="Cover",
     icon="🏠",
-    is_sidebar=True,
+    default=True,
 )
 
 sales_page = st.Page(
