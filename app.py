@@ -17,7 +17,7 @@ sales_page = st.Page(
 appointments_page = st.Page(
     "views/appointments_view.py",
     title="Appointments View",
-    icon=":🏠:",
+    default=True,
 )
 
 merged_page = st.Page(
