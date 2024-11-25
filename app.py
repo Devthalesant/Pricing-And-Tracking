@@ -31,6 +31,7 @@ merged_page = st.Page(
 # --- NAVIGATION SETUP WITH SECTIONS ---
 pg = st.navigation(
     {
+        "Cover": [cover_page],
         "Sales": [sales_page],
         "Appointments": [appointments_page],
         "Merged": [merged_page]
