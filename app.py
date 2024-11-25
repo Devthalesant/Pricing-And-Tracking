@@ -12,7 +12,7 @@ cover_page = st.Page(
 sales_page = st.Page(
     "views/sales_view.py",
     title="Sales View",
-    icon=":money_with_wings:",
+    icon="money",
     default=True,
 )
 
