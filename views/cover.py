@@ -12,7 +12,7 @@ st.sidebar.title("Análises - Pró-Corpo")
 page = st.sidebar.radio("Go to", ["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
 
 # Path to the sales indicators CSV file
-df_sales_path_all_indicators = "/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv"
+df_sales_path_all_indicators = "/content/Pricing-And-Tracking/all_indicators_sales.csv"
 
 if page == "Visão - Vendas":
     # Load the sales indicators DataFrame
