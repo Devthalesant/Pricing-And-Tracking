@@ -29,19 +29,19 @@ if page == "Visão - Vendas":
     df_sales_all_indicators = pd.read_csv(df_sales_all_indicators_path)
     st.dataframe(df_sales_all_indicators)
   
-  if sales_option == "Preço Médio":
+  elif sales_option == "Preço Médio":
     df_sales_average_price = pd.read_csv(df_sales_average_price_path)
     st.dataframe(df_sales_average_price)
 
-  if sales_option == "Margem de Contribuição":
+  elif sales_option == "Margem de Contribuição":
     df_sales_contribution_margin = pd.read_csv(df_sales_contribution_margin_path)
     st.dataframe(df_sales_contribution_margin)
 
-  if sales_option == "Produtos mais Vendidos":
+  elif sales_option == "Produtos mais Vendidos":
     df_sales_main_products = pd.read_csv(df_sales_main_products_path)
     st.dataframe(df_sales_main_products)
   
-  if sales_option == "Quantidade Vendida":
+  elif sales_option == "Quantidade Vendida":
     df_sales_quantity_sold = pd.read_csv(df_sales_quantity_sold_path)
     st.dataframe(df_sales_quantity_sold)
   
