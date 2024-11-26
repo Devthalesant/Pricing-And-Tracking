@@ -1,11 +1,13 @@
 import streamlit as st
 import pandas as pd
+import os
 
 # Set up the Streamlit page
 st.set_page_config(page_title="DashBoard Financeiro - Pró-Corpo Estética", page_icon="💎", layout="wide")
 
 # Title of the Dashboard
 st.title("DashBoard Financeiro - Pró-Corpo Estética")
+st.write("Current Working Directory:", os.getcwd())
 
 # Sidebar navigation
 st.sidebar.title("Análises - Pró-Corpo")
@@ -25,6 +27,7 @@ if page == "Visão - Vendas":
   sales_option = st.selectbox("O que você quer ver de Vendas?", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
   
   if sales_option == "Todos Indicadores":
+    
 
     df_sales_all_indicators = pd.read_csv(df_sales_all_indicators_path)
     st.dataframe(df_sales_all_indicators)
@@ -50,4 +53,3 @@ if page == "Visão - Vendas":
 
 else: 
   st.subheader("Visão - Agendamentos")
-  
