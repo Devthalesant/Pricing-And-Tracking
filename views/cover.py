@@ -10,4 +10,4 @@ page = st.sidebar.radio("Go to", ["Iníco", "Visão - Vendas", "Visão - Agendam
 
 image_path = "/content/Pricing-And-Tracking/base_de_dados/Logo vertical (aplicação fundo escuro).png"
 
-st.image(imagr_path, caption="Logo", use_column_width=True)
+st.image(image_path, caption="Logo", use_column_width=True)
