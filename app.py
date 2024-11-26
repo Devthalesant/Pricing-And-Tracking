@@ -58,7 +58,7 @@ if page == "Visão - Vendas":
   else: 
     st.write("Escolha uma opção válida.")
 
-if page == "Visão - Agendamentos":
+elif page == "Visão - Agendamentos":
   st.subheader("Visão - Agendamentos")
   appointments_option = st.selectbox("O que você quer ver de Agendamentos?", ["Todos Indicadores", "Procedimentos mais atendidos", "Tempo de Agenda", "Custos Diretos", "Análise de Cortesia"])
   
