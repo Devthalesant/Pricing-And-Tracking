@@ -16,8 +16,17 @@ df_sales_path_all_indicators = "/content/Pricing-And-Tracking/base_de_dados/all_
 
 if page == "Visão - Vendas":
     # Load the sales indicators DataFrame
-    df_sales_all_indicators = pd.read_csv(df_sales_path_all_indicators)
-    st.dataframe(df_sales_all_indicators)
+    try:
+        df_sales_all_indicators = pd.read_csv(df_sales_path_all_indicators)
+        st.dataframe(df_sales_all_indicators)  # Display the DataFrame
+    except FileNotFoundError:
+        st.error("Sales data file not found. Please check the file path.")
+    except pd.errors.EmptyDataError:
+        st.error("Sales data file is empty.")
+    except pd.errors.ParserError:
+        st.error("Error parsing the sales data file. Please check the file format.")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 
 else:
     st.write("Página não encontrada.")
