@@ -9,7 +9,7 @@ st.title("DashBoard Financeiro - Pró-Corpo Estética")
 
 # Sidebar navigation
 st.sidebar.title("Análises - Pró-Corpo")
-page = st.sidebar.radio("Ir Para", ["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
+page = st.sidebar.radio(["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
 
 # Path to the sales indicators CSV file
 df_sales_path_all_indicators = "/content/Pricing-And-Tracking/all_indicators_sales.csv"
