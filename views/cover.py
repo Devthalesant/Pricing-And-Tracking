@@ -12,7 +12,12 @@ st.sidebar.title("Análises - Pró-Corpo")
 page = st.sidebar.radio("Ir Para", ["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
 
 # Path to the sales indicators CSV file
-# df_sales_path_all_indicators = "/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv"
+df_sales_all_indicators_path = "/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv"
+df_sales_average_price_path = "/content/Pricing-And-Tracking/base_de_dados/df_average_price.csv"
+df_sales_contribution_margin_path = "/content/Pricing-And-Tracking/base_de_dados/df_contribution_margin.csv"
+df_sales_main_products_path = "/content/Pricing-And-Tracking/base_de_dados/df_main_products.csv"
+df_sales_quantity_sold_path = "/content/Pricing-And-Tracking/base_de_dados/df_quantity_sold.csv"
+
 
 if page == "Visão - Vendas":
 
@@ -21,23 +26,23 @@ if page == "Visão - Vendas":
   
   if sales_option == "Todos Indicadores":
 
-    df_sales_all_indicators = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv")
+    df_sales_all_indicators = pd.read_csv(df_sales_all_indicators_path)
     st.dataframe(df_sales_all_indicators)
   
   if sales_option == "Preço Médio":
-    df_sales_average_price = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_average_price.csv")
+    df_sales_average_price = pd.read_csv(df_sales_average_price_path)
     st.dataframe(df_sales_average_price)
 
   if sales_option == "Margem de Contribuição":
-    df_sales_contribution_margin = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_contribution_margin.csv")
+    df_sales_contribution_margin = pd.read_csv(df_sales_contribution_margin_path)
     st.dataframe(df_sales_contribution_margin)
 
   if sales_option == "Produtos mais Vendidos":
-    df_sales_main_products = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_main_products.csv")
+    df_sales_main_products = pd.read_csv(df_sales_main_products_path)
     st.dataframe(df_sales_main_products)
   
   if sales_option == "Quantidade Vendida":
-    df_sales_quantity_sold = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_quantity_sold.csv")
+    df_sales_quantity_sold = pd.read_csv(df_sales_quantity_sold_path)
     st.dataframe(df_sales_quantity_sold)
   
   else: 
