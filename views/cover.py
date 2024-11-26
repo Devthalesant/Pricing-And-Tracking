@@ -24,19 +24,19 @@ if page == "Visão - Vendas":
     df_sales_all_indicators = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv")
     st.dataframe(df_sales_all_indicators)
   
-  elif sales_option == "Preço Médio":
+  if sales_option == "Preço Médio":
     df_sales_average_price = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_average_price.csv")
     st.dataframe(df_sales_average_price)
 
-  elif sales_option == "Margem de Contribuição":
+  if sales_option == "Margem de Contribuição":
     df_sales_contribution_margin = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_contribution_margin.csv")
     st.dataframe(df_sales_contribution_margin)
 
-  elif sales_option == "Produtos mais Vendidos":
+  if sales_option == "Produtos mais Vendidos":
     df_sales_main_products = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_main_products.csv")
     st.dataframe(df_sales_main_products)
   
-  elif sales_option == "Quantidade Vendida":
+  if sales_option == "Quantidade Vendida":
     df_sales_quantity_sold = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/df_quantity_sold.csv")
     st.dataframe(df_sales_quantity_sold)
   
