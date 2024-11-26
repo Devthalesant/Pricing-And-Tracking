@@ -18,6 +18,7 @@ if page == "Visão - Vendas":
 
   st.subheader("Visão - Vendas")
   sales_option = st.selectbox("O que você quer ver de Vendas?", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
+  
   if sales_option == "Todos Indicadores":
 
     df_sales_all_indicators = pd.read_csv("/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv")
