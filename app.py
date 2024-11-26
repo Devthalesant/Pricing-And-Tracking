@@ -7,7 +7,6 @@ st.set_page_config(page_title="DashBoard Financeiro - Pró-Corpo Estética", pag
 
 # Title of the Dashboard
 st.title("DashBoard Financeiro - Pró-Corpo Estética")
-st.write("Current Working Directory:", os.getcwd())
 
 # Sidebar navigation
 st.sidebar.title("Análises - Pró-Corpo")
@@ -21,6 +20,8 @@ df_sales_main_products_path = "/content/Pricing-And-Tracking/base_de_dados/df_ma
 df_sales_quantity_sold_path = "/content/Pricing-And-Tracking/base_de_dados/df_quantity_sold.csv"
 
 
+
+@st.cache_data
 if page == "Visão - Vendas":
 
   st.subheader("Visão - Vendas")
