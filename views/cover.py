@@ -9,14 +9,14 @@ st.title("DashBoard Financeiro - Pró-Corpo Estética")
 
 # Sidebar navigation
 st.sidebar.title("Análises - Pró-Corpo")
-page = st.sidebar.radio("Go to", ["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
+page = st.sidebar.radio("Ir Para", ["Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
 
 # Path to the sales indicators CSV file
 df_sales_path_all_indicators = "/content/Pricing-And-Tracking/all_indicators_sales.csv"
 
 if page == "Visão - Vendas":
-  
+
   st.subheader("Visão - Vendas")
-  sales_option = st.selectbox("Select Sales Metric", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
+  sales_option = st.selectbox("O que você quer ver de Vendas?", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
   
 
