@@ -14,5 +14,10 @@ page = st.sidebar.radio("Go to", ["Visão - Vendas", "Visão - Agendamentos", "I
 # Path to the sales indicators CSV file
 df_sales_path_all_indicators = "/content/Pricing-And-Tracking/base_de_dados/all_indicators_sales.csv"
 
+if page == "Visão - Vendas":
+    # Load the sales indicators DataFrame
+    df_sales_all_indicators = pd.read_csv(df_sales_path_all_indicators)
+    st.dataframe(df_sales_all_indicators)
 
-
+else:
+    st.write("Página não encontrada.")
