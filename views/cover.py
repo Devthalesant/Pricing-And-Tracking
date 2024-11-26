@@ -16,7 +16,7 @@ df_sales_all_indicators_path = "/content/Pricing-And-Tracking/base_de_dados/all_
 df_sales_average_price_path = "/content/Pricing-And-Tracking/base_de_dados/df_average_price.csv"
 df_sales_contribution_margin_path = "/content/Pricing-And-Tracking/base_de_dados/df_contribution_margin.csv"
 df_sales_main_products_path = "/content/Pricing-And-Tracking/base_de_dados/df_main_products.csv"
-df_sales_quantity_sold_path = "/content/Pricing-And-Tracking/base_de_dados/df_quantity_sold.csv"
+df_sales_quantity_sold_path = "/Pricing-And-Tracking/blob/main/base_de_dados/df_quantity_sold.csv"
 
 
 if page == "Visão - Vendas":
