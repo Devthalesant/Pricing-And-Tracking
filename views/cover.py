@@ -8,6 +8,6 @@ st.title("DashBoard Financeiro - Pró-Corpo Estética")
 st.sidebar.title("Análises - Pró-Corpo")
 page = st.sidebar.radio("Go to", ["Iníco", "Visão - Vendas", "Visão - Agendamentos", "Indicadores Gerais"])
 
-image_path = "/content/Pricing-And-Tracking/base_de_dados/Logo vertical (aplicação fundo escuro).png"
+image_path = "/content/Pricing-And-Tracking/base_de_dados/Logo_vertical.png"
 
 st.image(image_path, caption="Logo", use_column_width=True)
