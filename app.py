@@ -21,7 +21,7 @@ df_sales_quantity_sold_path = "/content/Pricing-And-Tracking/base_de_dados/df_qu
 
 
 
-@st.cache_data
+
 if page == "Visão - Vendas":
 
   st.subheader("Visão - Vendas")
