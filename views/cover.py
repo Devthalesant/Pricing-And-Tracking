@@ -18,5 +18,29 @@ if page == "Visão - Vendas":
 
   st.subheader("Visão - Vendas")
   sales_option = st.selectbox("O que você quer ver de Vendas?", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
+  if sales_option == "Todos Indicadores":
+    df_sales_all_indicators = pd.read_csv(df_sales_path_all_indicators)
+    st.dataframe(df_sales_all_indicators)
   
+  elif sales_option == "Preço Médio":
+    df_sales_average_price = pd.read_csv("/content/Pricing-And-Tracking/df_average_price.csv")
+    st.dataframe(df_sales_average_price)
 
+  elif sales_option == "Margem de Contribuição":
+    df_sales_contribution_margin = pd.read_csv("/content/Pricing-And-Tracking/df_contribution_margin.csv")
+    st.dataframe(df_sales_contribution_margin)
+
+  elif sales_option == "Produtos mais Vendidos":
+    df_sales_main_products = pd.read_csv("/content/Pricing-And-Tracking/df_main_products.csv")
+    st.dataframe(df_sales_main_products)
+  
+  elif sales_option == "Quantidade Vendida":
+    df_sales_quantity_sold = pd.read_csv("/content/Pricing-And-Tracking/df_quantity_sold.csv")
+    st.dataframe(df_sales_quantity_sold)
+  
+  else: 
+    st.write("Escolha uma opção válida.")
+
+else: 
+  st.subheader("Visão - Agendamentos")
+  
