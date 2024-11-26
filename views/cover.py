@@ -14,5 +14,11 @@ page = st.sidebar.radio("Go to", ["Início", "Visão - Vendas", "Visão - Agenda
 # Image path for the logo
 image_path = "/content/Pricing-And-Tracking/views/logo_vertical.png"
 
-# Display the image
-st.image(image_path, caption="Logo", use_column_width=True)
+try:
+    image = Image.open(image_path)
+    st.image(image, caption="Logo", use_column_width=True)
+except Exception as e:
+    st.error(f"Error opening image: {e}")
+
+# # Display the image
+# st.image(image_path, caption="Logo", use_column_width=True)
