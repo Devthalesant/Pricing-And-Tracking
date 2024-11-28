@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 
+Month_list = ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+
 # Set up the Streamlit page
 st.set_page_config(page_title="DashBoard Financeiro - Pró-Corpo Estética", page_icon="💎", layout="wide")
 
@@ -18,6 +20,8 @@ df_appointmentes_time_taken_from_schedule_path = "base_de_dados/appointments/tim
 
 st.subheader("Visão - Agendamentos")
 appointments_option = st.selectbox("O que você quer ver de Agendamentos?", ["Todos Indicadores", "Procedimentos mais atendidos", "Tempo de Agenda", "Custos Diretos", "Análise de Cortesia"])
+month_selector = st.selectbox("Escolha o mês", Month_list)
+
 
 if appointments_option == "Todos Indicadores":
   df_appointments_all_indicators = pd.read_csv(df_appointments_all_indicators_path)
