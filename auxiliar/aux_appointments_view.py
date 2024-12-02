@@ -1,4 +1,9 @@
 
+import streamlit as st
+import pandas as pd
+import os
+
+
 def appointments_view():
   Month_list = ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro"]
   branches_list = ['ALPHAVILLE','BELO HORIZONTE','CAMPINAS','COPACABANA','IPIRANGA','ITAIM','JARDINS','LAPA','LONDRINA','MOEMA','MOOCA','OSASCO','RIBEIRÃO PRETO','SANTO AMARO','SANTOS','SOROCABA','SÃO BERNARDO','TATUAPÉ','TIJUCA','TUCURUVI','VILA MASCOTE']
