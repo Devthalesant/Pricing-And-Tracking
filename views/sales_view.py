@@ -4,6 +4,8 @@ import os
 import random
 from auxiliar.aux_sales_view import *
 
+df_sales_all_indicators, df_sales_average_price, df_sales_contribution_margin, df_sales_main_products, df_sales_quantity_sold = sales_view()
+
 # Path to the sales indicators CSV file
 # df_sales_all_indicators_path = "base_de_dados/sales/all_indicators_sales.csv"
 # df_sales_average_price_path = "base_de_dados/sales/df_average_price.csv"
