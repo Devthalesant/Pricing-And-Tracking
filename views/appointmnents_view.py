@@ -5,9 +5,7 @@ from auxiliar.aux_appointments_view import *
 
 
 # bringing the Data Frames from aux
-
-df_appointments_all_indicators,df_appointments_main_served_procedeures,df_appointmentes_time_taken_from_schedule,
-df_appointments_direct_costs,df_appointments_cortesy_analysis = appointments_view()
+df_appointments_all_indicators,df_appointments_main_served_procedeures,df_appointmentes_time_taken_from_schedule,df_appointments_direct_costs,df_appointments_cortesy_analysis = appointments_view()
 
 
 Month_list = ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
