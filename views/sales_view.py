@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import random
 
-Month_list = ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+Month_list = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
 
 #Path to the sales indicators CSV file
 df_sales_all_indicators_path = "base_de_dados/sales/Sales_View/all_indicators_sales.csv"
