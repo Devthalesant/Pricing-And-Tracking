@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 import random
-from auxiliar.aux_sales_view import *
 
 Month_list = ["janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
 
