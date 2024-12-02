@@ -1,6 +1,20 @@
 import streamlit as st
 import pandas as pd
 import os
+import random
+
+# criando um DF aleatorio de 2x2: 
+
+colunas = ["A","B"]
+
+df = pd.DataFrame(np.random.rand(2,2), columns=colunas, index=linhas)
+
+#savig DF as CSV in "base_de_dados":
+df.to_csv("base_de_dados/sales/try_mother_fucker", index=False)
+
+
+
+
 
 # Path to the sales indicators CSV file
 df_sales_all_indicators_path = "base_de_dados/sales/all_indicators_sales.csv"
