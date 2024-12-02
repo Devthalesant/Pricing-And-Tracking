@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import random
-from auxiliar/aux_sales_view import *
+from auxiliar.aux_sales_view import *
 
 # Path to the sales indicators CSV file
 df_sales_all_indicators_path = "base_de_dados/sales/all_indicators_sales.csv"

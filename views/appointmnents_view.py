@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from auxiliar/aux_appointments_view import *
+from auxiliar.aux_appointments_view import *
 
 
 # bringing the Data Frames from aux
