@@ -9,7 +9,7 @@ page_1 = st.Page(
 
 # --- PAGE SETUP ---
 page_2 = st.Page(
-    "views/appointmnents_view.py",
+    "views/appointments_view.py",
     title="VIsão - Agendamento",
     icon=":material/home:",
     default=True,
