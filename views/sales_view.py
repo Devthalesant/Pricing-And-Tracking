@@ -23,6 +23,7 @@ if sales_option == "Lucro Operacional":
   if month_selector == "Anual":
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
     st.dataframe(df_sales_revenue_and_operating_profit)
+    st.bar_chart(df_sales_revenue_and_operating_profit)
 
   else:
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin([month_selector])]
