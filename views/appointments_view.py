@@ -17,10 +17,10 @@ df_appointments_main_served_procedeures_path = "base_de_dados/appointments/Appoi
 df_appointmentes_time_taken_from_schedule_path = "base_de_dados/appointments/Appointments_View/time_taken_from_schedule.csv"
 
 st.subheader("Visão - Agendamentos")
-appointments_option = st.selectbox("O que você quer ver de Agendamentos?", ["Todos Indicadores", "Procedimentos mais atendidos", "Tempo de Agenda", "Custos Diretos", "Análise de Cortesia"])
+appointments_option = st.selectbox("O que você quer ver de Agendamentos?", ["Tempo e Custo Total", "Procedimentos mais atendidos", "Tempo de Agenda", "Custos Diretos", "Análise de Cortesia"])
 month_selector = st.selectbox("Escolha o mês", Month_list)
 
-if appointments_option == "Todos Indicadores":
+if appointments_option == "Tempo e Custo Total":
     df_appointments_total_time_and_cost = pd.read_csv(df_appointments_total_time_and_cost_path)
     if month_selector == "Anual":
         st.dataframe(df_appointments_total_time_and_cost)
