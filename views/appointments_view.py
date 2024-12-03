@@ -10,7 +10,7 @@ st.set_page_config(page_title="DashBoard Financeiro - Pró-Corpo Estética", pag
 st.title("DashBoard Financeiro - Pró-Corpo Estética")
 
 # Path to the appointments indicators CSV file
-df_appointments_all_indicators_path = "base_de_dados/appointments/Appointments_View/all_indicators_appointments.csv"
+df_appointments_total_time_and_cost_path = "base_de_dados/appointments/Appointments_View/total_time_and_cost.csv"
 df_appointments_cortesy_analysis_path = "base_de_dados/appointments/Appointments_View/courtesy_analysis.csv"
 df_appointments_direct_costs_path = "base_de_dados/appointments/Appointments_View/direct_costs.csv"
 df_appointments_main_served_procedeures_path = "base_de_dados/appointments/Appointments_View/main_served_procedeures.csv"
@@ -21,12 +21,12 @@ appointments_option = st.selectbox("O que você quer ver de Agendamentos?", ["To
 month_selector = st.selectbox("Escolha o mês", Month_list)
 
 if appointments_option == "Todos Indicadores":
-    df_appointments_all_indicators = pd.read_csv(df_appointments_all_indicators_path)
+    df_appointments_total_time_and_cost = pd.read_csv(df_appointments_total_time_and_cost_path)
     if month_selector == "Anual":
-        st.dataframe(df_appointments_all_indicators)
+        st.dataframe(df_appointments_total_time_and_cost)
     else:
-        df_appointments_all_indicators = df_appointments_all_indicators.loc[df_appointments_all_indicators['Mês Atendimento'].isin([month_selector])]
-        st.dataframe(df_appointments_all_indicators)
+        df_appointments_total_time_and_cost = df_appointments_total_time_and_cost.loc[df_appointments_total_time_and_cost['Mês Atendimento'].isin([month_selector])]
+        st.dataframe(df_appointments_total_time_and_cost)
 
 elif appointments_option == "Procedimentos mais atendidos":
     df_appointments_main_served_procedeures = pd.read_csv(df_appointments_main_served_procedeures_path)
