@@ -3,11 +3,8 @@ import pandas as pd
 
 Month_list = ["Anual", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
-# Set up the Streamlit page
-st.set_page_config(page_title="DashBoard Financeiro - Pró-Corpo Estética", page_icon="💎", layout="wide")
-
 # Title of the Dashboard
-st.title("DashBoard Financeiro - Pró-Corpo Estética")
+st.subheader("Visão - Vendas")
 
 # Path to the appointments indicators CSV file
 df_appointments_total_time_and_cost_path = "base_de_dados/appointments/Appointments_View/total_time_and_cost.csv"
