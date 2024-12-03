@@ -50,7 +50,7 @@ elif sales_option == "Margem de Contribuição":
     df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin([month_selector])]
     st.dataframe(df_sales_contribution_margin)
 
-elif sales_option == "Produtos mais Vendidos"
+elif sales_option == "Produtos mais Vendidos":
   df_sales_main_products = pd.read_csv(df_sales_main_products_path)
 
   if month_selector == "Anual":
