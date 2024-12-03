@@ -17,7 +17,7 @@ sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacion
 month_selector = st.selectbox("Escolha o mês", Month_list)
 
 
-if sales_option == "Todos Indicadores":
+if sales_option == "Lucro Operacional":
   df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
 
   if month_selector == "Anual":
