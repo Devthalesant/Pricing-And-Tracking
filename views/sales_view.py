@@ -13,7 +13,7 @@ df_sales_main_products_path = "base_de_dados/sales/Sales_View/df_main_products.c
 df_sales_quantity_sold_path = "base_de_dados/sales/Sales_View/df_quantity_sold.csv"
 
 st.subheader("Visão - Vendas")
-sales_option = st.selectbox("O que você quer ver de Vendas?", ["Todos Indicadores", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
+sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
 month_selector = st.selectbox("Escolha o mês", Month_list)
 
 
