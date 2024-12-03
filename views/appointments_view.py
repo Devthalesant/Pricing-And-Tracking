@@ -3,9 +3,6 @@ import pandas as pd
 
 Month_list = ["Anual", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
-# Title of the Dashboard
-st.subheader("Visão - Vendas")
-
 # Path to the appointments indicators CSV file
 df_appointments_total_time_and_cost_path = "base_de_dados/appointments/Appointments_View/total_time_and_cost.csv"
 df_appointments_cortesy_analysis_path = "base_de_dados/appointments/Appointments_View/courtesy_analysis.csv"
