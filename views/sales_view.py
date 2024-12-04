@@ -23,9 +23,9 @@ sales_option = st.selectbox("O que você quer ver de Vendas?", sales_option)
 col_1, col_2 = st.columns(2)
 
 with col_1:
-    month_selector = st.selectbox("Escolha o mês", Month_list)
+    month_selector = st.multiselect("Escolha o mês", Month_list)
 with col_2:
-    branch_selector = st.selectbox("Escolha a unidade", branch_list)
+    branch_selector = st.multiselect("Escolha a unidade", branch_list)
 
 # sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
 # month_selector = st.selectbox("Escolha o mês", Month_list)
@@ -38,6 +38,10 @@ if sales_option == "Lucro Operacional":
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
     st.dataframe(df_sales_revenue_and_operating_profit)
     # st.bar_chart(data = df_sales_revenue_and_operating_profit,x = "Mês venda", y = "Lucro Operacional")
+
+  elif month_selector == "Anual" and branch_selector != "TODAS":
+    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Unidade'].isin([branch_selector])]
+    st.dataframe(df_sales_revenue_and_operating_profit)
 
   else:
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin([month_selector]) & df_sales_revenue_and_operating_profit['Unidade'].isin([branch_selector])]
