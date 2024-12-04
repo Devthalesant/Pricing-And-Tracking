@@ -95,6 +95,7 @@ elif sales_option == "Margem de Contribuição":
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin(month_selector) & 
                                                                       df_sales_contribution_margin['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_contribution_margin)
 
 elif sales_option == "Produtos mais Vendidos":
   df_sales_main_products = pd.read_csv(df_sales_main_products_path)
@@ -117,6 +118,7 @@ elif sales_option == "Produtos mais Vendidos":
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Mês venda'].isin(month_selector) & 
                                                           df_sales_main_products['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_main_products)
 
 elif sales_option == "Quantidade Vendida":
   df_sales_quantity_sold = pd.read_csv(df_sales_quantity_sold_path)
@@ -139,6 +141,7 @@ elif sales_option == "Quantidade Vendida":
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Mês venda'].isin(month_selector) & 
                                                           df_sales_quantity_sold['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_quantity_sold)
 
 else:
   st.write("Escolha uma opção válida.")
