@@ -41,6 +41,10 @@ if sales_option == "Lucro Operacional":
         df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector)]
         st.dataframe(df_sales_revenue_and_operating_profit)
 
+    elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
+        st.dataframe(df_sales_revenue_and_operating_profit)
+
     else:
         df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[
             df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector) & 
