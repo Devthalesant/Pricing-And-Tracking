@@ -28,28 +28,28 @@ with col_2:
     branch_selector = st.multiselect("Escolha a unidade", branch_list)
 
 if sales_option == "Lucro Operacional":
-    df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
+  df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
 
 
-    if len(month_selector) == 0 and len(branch_selector) == 0:
-      df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
+  if len(month_selector) == 0 and len(branch_selector) == 0:
+    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
+    st.dataframe(df_sales_revenue_and_operating_profit)
+
+  elif "Anual" in month_selector and "TODAS" in branch_selector:
       st.dataframe(df_sales_revenue_and_operating_profit)
 
-    elif "Anual" in month_selector and "TODAS" in branch_selector:
-        st.dataframe(df_sales_revenue_and_operating_profit)
+  elif "Anual" in month_selector and "TODAS" not in branch_selector:
+      df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_revenue_and_operating_profit)
 
-    elif "Anual" in month_selector and "TODAS" not in branch_selector:
-        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
-        st.dataframe(df_sales_revenue_and_operating_profit)
+  elif "Anual" not in month_selector and "TODAS" in branch_selector:
+      df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector)]
+      st.dataframe(df_sales_revenue_and_operating_profit)
 
-    elif "Anual" not in month_selector and "TODAS" in branch_selector:
-        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector)]
-        st.dataframe(df_sales_revenue_and_operating_profit)
-
-    elif "Anual" not in month_selector and "TODAS" not in branch_selector:
-        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector) & 
-                                                                                          df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
-        st.dataframe(df_sales_revenue_and_operating_profit)
+  elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+      df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector) & 
+                                                                                        df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_revenue_and_operating_profit)
 
 elif sales_option == "Preço Médio":
   df_sales_average_price = pd.read_csv(df_sales_average_price_path)
@@ -77,35 +77,68 @@ elif sales_option == "Preço Médio":
 elif sales_option == "Margem de Contribuição":
   df_sales_contribution_margin = pd.read_csv(df_sales_contribution_margin_path)
 
-  if month_selector == "Anual":
+  if len(month_selector) == 0 and len(branch_selector) == 0:
     df_sales_contribution_margin = df_sales_contribution_margin
     st.dataframe(df_sales_contribution_margin)
 
-  else:
-    df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin([month_selector])]
-    st.dataframe(df_sales_contribution_margin)
+  elif "Anual" in month_selector and "TODAS" in branch_selector:
+      st.dataframe(df_sales_contribution_margin)
+
+  elif "Anual" in month_selector and "TODAS" not in branch_selector:
+      df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_contribution_margin)
+
+  elif "Anual" not in month_selector and "TODAS" in branch_selector:
+      df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin(month_selector)]
+      st.dataframe(df_sales_contribution_margin)
+
+  elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+      df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin(month_selector) & 
+                                                                      df_sales_contribution_margin['Unidade'].isin(branch_selector)]
 
 elif sales_option == "Produtos mais Vendidos":
   df_sales_main_products = pd.read_csv(df_sales_main_products_path)
 
-  if month_selector == "Anual":
+  if len(month_selector) == 0 and len(branch_selector) == 0:
     df_sales_main_products = df_sales_main_products
     st.dataframe(df_sales_main_products)
 
-  else:
-    df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Mês venda'].isin([month_selector])]
-    st.dataframe(df_sales_main_products)
+  elif "Anual" in month_selector and "TODAS" in branch_selector:
+      st.dataframe(df_sales_main_products)
+
+  elif "Anual" in month_selector and "TODAS" not in branch_selector:
+      df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_main_products)
+
+  elif "Anual" not in month_selector and "TODAS" in branch_selector:
+      df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Mês venda'].isin(month_selector)]
+      st.dataframe(df_sales_main_products)
+
+  elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+      df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Mês venda'].isin(month_selector) & 
+                                                          df_sales_main_products['Unidade'].isin(branch_selector)]
 
 elif sales_option == "Quantidade Vendida":
   df_sales_quantity_sold = pd.read_csv(df_sales_quantity_sold_path)
 
-  if month_selector == "Anual":
+  if len(month_selector) == 0 and len(branch_selector) == 0:
     df_sales_quantity_sold = df_sales_quantity_sold
     st.dataframe(df_sales_quantity_sold)
 
-  else:
-    df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Mês venda'].isin([month_selector])]
-    st.dataframe(df_sales_quantity_sold)
+  elif "Anual" in month_selector and "TODAS" in branch_selector:
+      st.dataframe(df_sales_quantity_sold)
+
+  elif "Anual" in month_selector and "TODAS" not in branch_selector:
+      df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_quantity_sold)
+
+  elif "Anual" not in month_selector and "TODAS" in branch_selector:
+      df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Mês venda'].isin(month_selector)]
+      st.dataframe(df_sales_quantity_sold)
+
+  elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+      df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Mês venda'].isin(month_selector) & 
+                                                          df_sales_quantity_sold['Unidade'].isin(branch_selector)]
 
 else:
   st.write("Escolha uma opção válida.")
