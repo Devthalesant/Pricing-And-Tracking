@@ -34,8 +34,11 @@ if sales_option == "Lucro Operacional":
         st.dataframe(df_sales_revenue_and_operating_profit)
 
     elif "Anual" in month_selector and "TODAS" not in branch_selector:
-        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[
-            df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+        st.dataframe(df_sales_revenue_and_operating_profit)
+
+    elif "Anual" not in month_selector and "TODAS" in branch_selector:
+        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector)]
         st.dataframe(df_sales_revenue_and_operating_profit)
 
     else:
@@ -43,7 +46,7 @@ if sales_option == "Lucro Operacional":
             df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector) & 
             df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
         st.dataframe(df_sales_revenue_and_operating_profit)
-        
+
 elif sales_option == "Preço Médio":
   df_sales_average_price = pd.read_csv(df_sales_average_price_path)
 
