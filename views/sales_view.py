@@ -4,6 +4,9 @@ import os
 import random
 
 Month_list = ["Anual","Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+branch_list = df_sales_revenue_and_operating_profit["Unidade"].unique().tolist()
+brnach_list.append("Todas")
+
 
 #Path to the sales indicators CSV file
 df_sales_revenue_and_operating_profit_path = "base_de_dados/sales/Sales_View/revenue_and_operating_profit.csv"
@@ -15,18 +18,18 @@ df_sales_quantity_sold_path = "base_de_dados/sales/Sales_View/df_quantity_sold.c
 st.subheader("Visão - Vendas")
 sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
 month_selector = st.selectbox("Escolha o mês", Month_list)
-
+branch_selector = st.selectbox("Escolha a unidade", branch_list)
 
 if sales_option == "Lucro Operacional":
   df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
 
-  if month_selector == "Anual":
+  if month_selector == "Anual" and branch_selector == "Todas":
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
     st.dataframe(df_sales_revenue_and_operating_profit)
-    st.bar_chart(data = df_sales_revenue_and_operating_profit,x = "Mês venda", y = "Lucro Operacional")
+    # st.bar_chart(data = df_sales_revenue_and_operating_profit,x = "Mês venda", y = "Lucro Operacional")
 
   else:
-    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin([month_selector])]
+    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin([month_selector]) & df_sales_revenue_and_operating_profit['Unidade'].isin([branch_selector])]
     st.dataframe(df_sales_revenue_and_operating_profit)
 
 elif sales_option == "Preço Médio":
@@ -75,6 +78,3 @@ elif sales_option == "Quantidade Vendida":
 
 else:
   st.write("Escolha uma opção válida.")
-
-branch_list = df_sales_revenue_and_operating_profit["Unidade"].unique().tolist()
-st.write(branch_list)
