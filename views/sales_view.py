@@ -35,7 +35,7 @@ elif sales_option == "Preço Médio":
   if month_selector == "Anual":
     df_sales_average_price = df_sales_average_price
     st.dataframe(df_sales_average_price)
-    
+
   else:
     df_sales_average_price = df_sales_average_price.loc[df_sales_average_price['Mês venda'].isin([month_selector])]
     st.dataframe(df_sales_average_price)
@@ -46,7 +46,7 @@ elif sales_option == "Margem de Contribuição":
   if month_selector == "Anual":
     df_sales_contribution_margin = df_sales_contribution_margin
     st.dataframe(df_sales_contribution_margin)
-    
+
   else:
     df_sales_contribution_margin = df_sales_contribution_margin.loc[df_sales_contribution_margin['Mês venda'].isin([month_selector])]
     st.dataframe(df_sales_contribution_margin)
@@ -57,7 +57,7 @@ elif sales_option == "Produtos mais Vendidos":
   if month_selector == "Anual":
     df_sales_main_products = df_sales_main_products
     st.dataframe(df_sales_main_products)
-    
+
   else:
     df_sales_main_products = df_sales_main_products.loc[df_sales_main_products['Mês venda'].isin([month_selector])]
     st.dataframe(df_sales_main_products)
@@ -68,10 +68,13 @@ elif sales_option == "Quantidade Vendida":
   if month_selector == "Anual":
     df_sales_quantity_sold = df_sales_quantity_sold
     st.dataframe(df_sales_quantity_sold)
-    
+
   else:
     df_sales_quantity_sold = df_sales_quantity_sold.loc[df_sales_quantity_sold['Mês venda'].isin([month_selector])]
     st.dataframe(df_sales_quantity_sold)
 
 else:
   st.write("Escolha uma opção válida.")
+
+  branch_list = df_sales_revenue_and_operating_profit["Unidade"].unique().tolist()
+  st.write(branch_list)
