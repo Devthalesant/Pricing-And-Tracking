@@ -23,7 +23,7 @@ branch_selector = st.selectbox("Escolha a unidade", branch_list)
 if sales_option == "Lucro Operacional":
   df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
 
-  if month_selector == "Anual" and branch_selector == "Todas":
+  if month_selector == "Anual" and branch_selector == "TODAS":
     df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
     st.dataframe(df_sales_revenue_and_operating_profit)
     # st.bar_chart(data = df_sales_revenue_and_operating_profit,x = "Mês venda", y = "Lucro Operacional")
