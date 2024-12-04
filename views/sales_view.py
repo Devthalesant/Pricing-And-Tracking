@@ -46,7 +46,7 @@ if sales_option == "Lucro Operacional":
                                                                                           df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
         st.dataframe(df_sales_revenue_and_operating_profit)
 
-    elif month_selector.len() == 0 and branch_selector.len() == 0:
+    elif len(month_selector) == 0 and len(branch_selector) == 0:
         df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
         st.dataframe(df_sales_revenue_and_operating_profit)
 
