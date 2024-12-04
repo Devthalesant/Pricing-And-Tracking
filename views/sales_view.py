@@ -76,5 +76,5 @@ elif sales_option == "Quantidade Vendida":
 else:
   st.write("Escolha uma opção válida.")
 
-  branch_list = df_sales_revenue_and_operating_profit["Unidade"].unique().tolist()
-  st.write(branch_list)
+branch_list = df_sales_revenue_and_operating_profit["Unidade"].unique().tolist()
+st.write(branch_list)
