@@ -18,14 +18,14 @@ df_sales_quantity_sold_path = "base_de_dados/sales/Sales_View/df_quantity_sold.c
 
 st.subheader("Visão - Vendas")
 
-col_1, col_2,col_3 = st.columns(3)
+seletor_categoria = st.selectbox("Escolha o mês", Month_list)
+
+col_1, col_2 = st.columns(2)
 
 with col_1:
-  seletor_mes = st.selectbox("O que você quer ver de Vendas?", sales_option)
+    seletor_mes = st.selectbox("O que você quer ver de Vendas?", sales_option)
 with col_2:
-  seletor_categoria = st.selectbox("Escolha o mês", Month_list)
-with col_3:
-  seletor_unidade = st.selectbox("Escolha a unidade", branch_list)
+    seletor_unidade = st.selectbox("Escolha a unidade", branch_list)
 
 # sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
 # month_selector = st.selectbox("Escolha o mês", Month_list)
