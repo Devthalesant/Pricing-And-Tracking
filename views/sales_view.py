@@ -15,10 +15,21 @@ df_sales_contribution_margin_path = "base_de_dados/sales/Sales_View/df_contribut
 df_sales_main_products_path = "base_de_dados/sales/Sales_View/df_main_products.csv"
 df_sales_quantity_sold_path = "base_de_dados/sales/Sales_View/df_quantity_sold.csv"
 
+
 st.subheader("Visão - Vendas")
-sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
-month_selector = st.selectbox("Escolha o mês", Month_list)
-branch_selector = st.selectbox("Escolha a unidade", branch_list)
+
+col_1, col_2,col_3 = st.columns(3)
+
+with col_1:
+  seletor_mes = st.selectbox("O que você quer ver de Vendas?", sales_option)
+with col_2:
+  seletor_categoria = st.selectbox("Escolha o mês", Month_list)
+with col_3:
+  seletor_unidade = st.selectbox("Escolha a unidade", branch_list)
+
+# sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
+# month_selector = st.selectbox("Escolha o mês", Month_list)
+# branch_selector = st.selectbox("Escolha a unidade", branch_list)
 
 if sales_option == "Lucro Operacional":
   df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
