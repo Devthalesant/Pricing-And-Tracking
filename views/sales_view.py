@@ -54,13 +54,25 @@ if sales_option == "Lucro Operacional":
 elif sales_option == "Preço Médio":
   df_sales_average_price = pd.read_csv(df_sales_average_price_path)
 
-  if month_selector == "Anual":
+  if len(month_selector) == 0 and len(branch_selector) == 0:
     df_sales_average_price = df_sales_average_price
     st.dataframe(df_sales_average_price)
 
-  else:
-    df_sales_average_price = df_sales_average_price.loc[df_sales_average_price['Mês venda'].isin([month_selector])]
-    st.dataframe(df_sales_average_price)
+  elif "Anual" in month_selector and "TODAS" in branch_selector:
+      st.dataframe(df_sales_average_price)
+
+  elif "Anual" in month_selector and "TODAS" not in branch_selector:
+      df_sales_average_price = df_sales_average_price.loc[df_sales_average_price['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_average_price)
+
+  elif "Anual" not in month_selector and "TODAS" in branch_selector:
+      df_sales_average_price = df_sales_average_price.loc[df_sales_average_price['Mês venda'].isin(month_selector)]
+      st.dataframe(df_sales_average_price)
+
+  elif "Anual" not in month_selector and "TODAS" not in branch_selector:
+      df_sales_average_price = df_sales_average_price.loc[df_sales_average_price['Mês venda'].isin(month_selector) & 
+                                                          df_sales_average_price['Unidade'].isin(branch_selector)]
+      st.dataframe(df_sales_average_price)
 
 elif sales_option == "Margem de Contribuição":
   df_sales_contribution_margin = pd.read_csv(df_sales_contribution_margin_path)
