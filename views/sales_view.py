@@ -27,26 +27,23 @@ with col_1:
 with col_2:
     branch_selector = st.multiselect("Escolha a unidade", branch_list)
 
-# sales_option = st.selectbox("O que você quer ver de Vendas?", ["Lucro Operacional", "Preço Médio", "Margem de Contribuição","Produtos mais Vendidos", "Quantidade Vendida"])
-# month_selector = st.selectbox("Escolha o mês", Month_list)
-# branch_selector = st.selectbox("Escolha a unidade", branch_list)
-
 if sales_option == "Lucro Operacional":
-  df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
+    df_sales_revenue_and_operating_profit = pd.read_csv(df_sales_revenue_and_operating_profit_path)
 
-  if month_selector == "Anual" and branch_selector == "TODAS":
-    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit
-    st.dataframe(df_sales_revenue_and_operating_profit)
-    # st.bar_chart(data = df_sales_revenue_and_operating_profit,x = "Mês venda", y = "Lucro Operacional")
+    if "Anual" in month_selector and "TODAS" in branch_selector:
+        st.dataframe(df_sales_revenue_and_operating_profit)
 
-  elif month_selector == "Anual" and branch_selector != "TODAS":
-    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Unidade'].isin([branch_selector])]
-    st.dataframe(df_sales_revenue_and_operating_profit)
+    elif "Anual" in month_selector and "TODAS" not in branch_selector:
+        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[
+            df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+        st.dataframe(df_sales_revenue_and_operating_profit)
 
-  else:
-    df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[df_sales_revenue_and_operating_profit['Mês venda'].isin([month_selector]) & df_sales_revenue_and_operating_profit['Unidade'].isin([branch_selector])]
-    st.dataframe(df_sales_revenue_and_operating_profit)
-
+    else:
+        df_sales_revenue_and_operating_profit = df_sales_revenue_and_operating_profit.loc[
+            df_sales_revenue_and_operating_profit['Mês venda'].isin(month_selector) & 
+            df_sales_revenue_and_operating_profit['Unidade'].isin(branch_selector)]
+        st.dataframe(df_sales_revenue_and_operating_profit)
+        
 elif sales_option == "Preço Médio":
   df_sales_average_price = pd.read_csv(df_sales_average_price_path)
 
