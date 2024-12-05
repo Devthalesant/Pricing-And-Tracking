@@ -3,22 +3,22 @@ import streamlit as st
 # --- PAGE SETUP ---
 page_1 = st.Page(
     "views/sales_view.py",
-    title="Visão - Vendas",
+    title="Análises",
     icon=":material/thumb_up:"
 )
 
 # --- PAGE SETUP ---
 page_2 = st.Page(
     "views/appointments_view.py",
-    title="VIsão - Agendamento",
-    icon=":material/home:",
+    title="Análises",
+    icon=":material/thumb_up:",
     default=True,
 )
 
 # --- SUBPAGES SETUP FOR PAGE 1 ---
 subpage_1_1 = st.Page(
     "views/Sales_categorys_view.py",
-    title="Evolução Gráfica - Vendas",
+    title="Evolução Gráfica",
 )
 
 # --- NAVIGATION SETUP [WITHOUT SECTIONS] ---
