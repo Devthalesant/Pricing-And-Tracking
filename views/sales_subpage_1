@@ -1,0 +1,4 @@
+import streamlit as st
+import pandas as pd
+
+pd.read_csv("base_de_dados/sales/Sales_View/revenue_and_operating_profit.csv")
