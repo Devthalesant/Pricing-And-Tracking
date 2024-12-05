@@ -27,7 +27,7 @@ General_sales = groupby_for_sales_evolution
 General_sales['Mês venda'] = pd.Categorical(General_sales['Mês venda'], categories= months_order, ordered=True)
 General_sales = General_sales.sort_values(by="Mês venda")
 
-st.subheader("Gráfico de Evolução de Vendas - Medicina Estética")
+st.subheader("Gráfico de Evolução de Vendas - Geral")
 st.bar_chart(General_sales, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
 
   #Medicina Estética
