@@ -21,3 +21,5 @@ groupby_for_sales_evolution = groupby_for_sales.groupby(["Grupo", "Mês venda"])
 sales_evolution_med = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "MEDICINA ESTÉTICA"]
 
 st.dataframe(sales_evolution_med)
+
+st.bar_chart(sales_evolution_med, x="Mês venda", y="Valor liquido item")
