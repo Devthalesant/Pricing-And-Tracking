@@ -18,6 +18,7 @@ groupby_for_sales = df_sales.groupby(["Unidade", "Mês venda", "Grupo"]).agg({"V
 
 groupby_for_sales_evolution = groupby_for_sales.groupby(["Grupo", "Mês venda"]).agg({"Valor liquido item" : "sum"}).reset_index()
 
+pd.dataframe(groupby_for_sales_evolution)
 # Evolution Sales 
   #Medicina Estética
 
@@ -56,5 +57,5 @@ sales_evolution_lavieen = groupby_for_sales_evolution.loc[groupby_for_sales_evol
 sales_evolution_lavieen['Mês venda'] = pd.Categorical(sales_evolution_lavieen['Mês venda'], categories= months_order, ordered=True)
 sales_evolution_lavieen = sales_evolution_lavieen.sort_values(by="Mês venda")
 
-st.subheader("Gráfico de Evolução de Vendas - Ultraformer III")
+st.subheader("Gráfico de Evolução de Vendas - Lavieen")
 st.bar_chart(sales_evolution_lavieen, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
