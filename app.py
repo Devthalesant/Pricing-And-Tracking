@@ -15,13 +15,19 @@ page_2 = st.Page(
     default=True,
 )
 
+page_3 = st.Page(
+    "views/Sales_categorys_view.py",
+    title="Teste",
+    icon=":material/home:"
+)
+
 # --- NAVIGATION SETUP [WITHOUT SECTIONS] ---
 # pg = st.navigation(pages=[about_page, project_1_page, project_2_page])
 
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Pages": [page_1,page_2]
+        "Pages": [page_1,page_2,page_3]
     }
 )
 
