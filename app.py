@@ -15,10 +15,10 @@ page_2 = st.Page(
     default=True,
 )
 
-page_3 = st.Page(
+# --- SUBPAGES SETUP FOR PAGE 1 ---
+subpage_1_1 = st.Page(
     "views/Sales_categorys_view.py",
-    title="Teste",
-    icon=":material/home:"
+    title="Evolução Gráfica - Vendas",
 )
 
 # --- NAVIGATION SETUP [WITHOUT SECTIONS] ---
@@ -27,7 +27,9 @@ page_3 = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Pages": [page_1,page_2,page_3]
+        "Pages": [page_1,page_2],
+        "Visão - Vendas": [subpage_1_1],
+        "Visão - Agendamento": [],
     }
 )
 
