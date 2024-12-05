@@ -7,9 +7,10 @@ page_1 = st.Page(
     icon=":material/thumb_up:"
 )
 
+# --- PAGE SETUP ---
 page_2 = st.Page(
     "views/appointments_view.py",
-    title="Visão - Agendamento",
+    title="VIsão - Agendamento",
     icon=":material/home:",
     default=True,
 )
@@ -20,29 +21,21 @@ subpage_1_1 = st.Page(
     title="Evolução Gráfica - Vendas",
 )
 
-subpage_1_2 = st.Page(
-    "views/Sales_another_view.py",  # Adicione outra subpágina conforme necessário
-    title="Outra Subpágina - Vendas",
-)
+# --- NAVIGATION SETUP [WITHOUT SECTIONS] ---
+# pg = st.navigation(pages=[about_page, project_1_page, project_2_page])
 
-# --- SUBPAGES SETUP FOR PAGE 2 ---
-subpage_2_1 = st.Page(
-    "views/Appointments_details_view.py",  # Exemplo de subpágina para Agendamento
-    title="Detalhes do Agendamento",
-)
-
-subpage_2_2 = st.Page(
-    "views/Appointments_statistics_view.py",  # Outra subpágina para Agendamento
-    title="Estatísticas do Agendamento",
-)
-
-# --- NAVIGATION SETUP ---
+# --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Visão - Vendas": [page_1, subpage_1_1, subpage_1_2],
-        "Visão - Agendamento": [page_2, subpage_2_1, subpage_2_2],
+        "Visão - Vendas": [page_1,subpage_1_1],
+        "Visão - Agendamento": [page_2],
     }
 )
+
+
+# --- SHARED ON ALL PAGES ---
+# st.logo("assets/codingisfun_logo.png")
+
 
 # --- RUN NAVIGATION ---
 pg.run()
