@@ -42,7 +42,7 @@ st.bar_chart(sales_evolution_est, x="Mês venda", y="Valor liquido item",color =
 
   #ULTRAFORMER_III
 
-sales_evolution_ultra = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "ULTRAFORMER III"]
+sales_evolution_ultra = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "ULTRAFORMER_III"]
 
 sales_evolution_ultra['Mês venda'] = pd.Categorical(sales_evolution_ultra['Mês venda'], categories= months_order, ordered=True)
 sales_evolution_ultra = sales_evolution_ultra.sort_values(by="Mês venda")
