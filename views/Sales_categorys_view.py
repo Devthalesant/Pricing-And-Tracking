@@ -27,4 +27,4 @@ sales_evolution_med['Mês venda'] = pd.Categorical(sales_evolution_med['Mês ven
 sales_evolution_med = sales_evolution_med.sort_values(by="Mês venda")
 
 st.subheader("Gráfico de Evolução de Vendas - Medicina Estética")
-st.bar_chart(sales_evolution_med, x="Mês venda", y="Valor liquido item",color =(128, 0, 128, 1.0))
+st.bar_chart(sales_evolution_med, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
