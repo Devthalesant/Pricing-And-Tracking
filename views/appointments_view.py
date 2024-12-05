@@ -14,7 +14,7 @@ df_appointments_direct_costs_path = "base_de_dados/appointments/Appointments_Vie
 df_appointments_main_served_procedeures_path = "base_de_dados/appointments/Appointments_View/main_served_procedeures.csv"
 df_appointmentes_time_taken_from_schedule_path = "base_de_dados/appointments/Appointments_View/time_taken_from_schedule.csv"
 
-st.subheader("Visão - Agendamentos")
+st.subheader("Visão - Agendamentos 💎")
 
 appointments_option = st.selectbox("O que você quer ver de Agendamentos?", appointments_option)
 

@@ -16,7 +16,7 @@ df_sales_main_products_path = "base_de_dados/sales/Sales_View/df_main_products.c
 df_sales_quantity_sold_path = "base_de_dados/sales/Sales_View/df_quantity_sold.csv"
 
 
-st.subheader("Visão - Vendas")
+st.subheader("Visão - Vendas 💎")
 
 sales_option = st.selectbox("O que você quer ver de Vendas?", sales_option)
 
