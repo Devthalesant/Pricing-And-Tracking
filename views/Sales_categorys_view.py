@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 Month_list = ["Anual","Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
 branch_list = ["TODAS","ALPHAVILLE","BELO HORIZONTE","CAMPINAS","COPACABANA","IPIRANGA","ITAIM","JARDINS","LAPA","LONDRINA","MOEMA","MOOCA","OSASCO",
@@ -27,8 +28,21 @@ General_sales = groupby_for_sales_evolution
 General_sales['Mês venda'] = pd.Categorical(General_sales['Mês venda'], categories= months_order, ordered=True)
 General_sales = General_sales.sort_values(by="Mês venda")
 
-st.subheader("Gráfico de Evolução de Vendas - Geral")
-st.bar_chart(General_sales, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
+fig, ax = plt.subplots()
+bars = ax.bar(General_sales['Mês venda'], General_sales['Valor liquido item'], color=(160/255, 32/255, 240/255, 1.0))
+
+# Adicionar os rótulos de valores no topo das barras
+for bar in bars:
+    yval = bar.get_height()
+    ax.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom') # posiciona o valor acima da barra
+
+# Definindo títulos e rótulos
+ax.set_xlabel('Mês venda')
+ax.set_ylabel('Valor líquido item')
+ax.set_title('Gráfico de Evolução de Vendas - Geral')
+
+# Exibir gráfico no Streamlit
+st.pyplot(fig)
 
   #Medicina Estética
 
