@@ -38,3 +38,23 @@ sales_evolution_est = sales_evolution_est.sort_values(by="Mês venda")
 
 st.subheader("Gráfico de Evolução de Vendas - Estética")
 st.bar_chart(sales_evolution_est, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
+
+  #ULTRAFORMER_III
+
+sales_evolution_ultra = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "ULTRAFORMER III"]
+
+sales_evolution_ultra['Mês venda'] = pd.Categorical(sales_evolution_ultra['Mês venda'], categories= months_order, ordered=True)
+sales_evolution_ultra = sales_evolution_ultra.sort_values(by="Mês venda")
+
+st.subheader("Gráfico de Evolução de Vendas - Ultraformer III")
+st.bar_chart(sales_evolution_ultra, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
+
+  #LAVIEEN
+
+sales_evolution_lavieen = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "LAVIEEN"]
+
+sales_evolution_lavieen['Mês venda'] = pd.Categorical(sales_evolution_lavieen['Mês venda'], categories= months_order, ordered=True)
+sales_evolution_lavieen = sales_evolution_lavieen.sort_values(by="Mês venda")
+
+st.subheader("Gráfico de Evolução de Vendas - Ultraformer III")
+st.bar_chart(sales_evolution_lavieen, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
