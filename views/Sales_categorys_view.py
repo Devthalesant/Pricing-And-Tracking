@@ -17,6 +17,7 @@ groupby_for_sales = df_sales.groupby(["Unidade", "Mês venda", "Grupo"]).agg({"V
 # Evolution od Sales:
 
 groupby_for_sales_evolution = groupby_for_sales.groupby(["Grupo", "Mês venda"]).agg({"Valor liquido item" : "sum"}).reset_index()
-st.bar_chart(groupby_for_sales_evolution)
 
-st.dataframe(groupby_for_sales_evolution)
+sales_evolution_med = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "MEDICINA ESTÉTICA"]
+
+st.dataframe(sales_evolution_med)
