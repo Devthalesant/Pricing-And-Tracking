@@ -28,13 +28,14 @@ General_sales = groupby_for_sales_evolution
 General_sales['Mês venda'] = pd.Categorical(General_sales['Mês venda'], categories= months_order, ordered=True)
 General_sales = General_sales.sort_values(by="Mês venda")
 
+# Criar gráfico
 fig, ax = plt.subplots()
 bars = ax.bar(General_sales['Mês venda'], General_sales['Valor liquido item'], color=(160/255, 32/255, 240/255, 1.0))
 
-# Adicionar os rótulos de valores no topo das barras
+# Adicionar rótulos de valores no topo das barras
 for bar in bars:
     yval = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom') # posiciona o valor acima da barra
+    ax.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
 
 # Definindo títulos e rótulos
 ax.set_xlabel('Mês venda')
