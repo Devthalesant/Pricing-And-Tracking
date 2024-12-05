@@ -23,7 +23,7 @@ col_1, col_2 = st.columns(2)
 with col_1:
     month_selector = st.multiselect("Escolha o mês", Month_list)
 with col_2:
-    branch_selector = st.multiselect("Escolha a unidade", branch_list)
+    branch_selector = st.multiselect("Escolha a Unidade do agendamento", branch_list)
 
 
 if appointments_option == "Custo e Tempo Total":
@@ -38,7 +38,7 @@ if appointments_option == "Custo e Tempo Total":
       st.dataframe(df_appointments_total_time_and_cost_path)
 
   elif "Anual" in month_selector and "TODAS" not in branch_selector:
-      df_appointments_total_time_and_cost_path = df_appointments_total_time_and_cost_path.loc[df_appointments_total_time_and_cost_path['Unidade'].isin(branch_selector)]
+      df_appointments_total_time_and_cost_path = df_appointments_total_time_and_cost_path.loc[df_appointments_total_time_and_cost_path['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_total_time_and_cost_path)
 
   elif "Anual" not in month_selector and "TODAS" in branch_selector:
@@ -47,7 +47,7 @@ if appointments_option == "Custo e Tempo Total":
 
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_appointments_total_time_and_cost_path = df_appointments_total_time_and_cost_path.loc[df_appointments_total_time_and_cost_path['Mês Atendimento'].isin(month_selector) &
-                                                                                        df_appointments_total_time_and_cost_path['Unidade'].isin(branch_selector)]
+                                                                                        df_appointments_total_time_and_cost_path['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_total_time_and_cost_path)
 
 elif appointments_option == "Custos Diretos":
@@ -61,7 +61,7 @@ elif appointments_option == "Custos Diretos":
       st.dataframe(df_appointments_direct_costs)
 
   elif "Anual" in month_selector and "TODAS" not in branch_selector:
-      df_appointments_direct_costs = df_appointments_direct_costs.loc[df_appointments_direct_costs['Unidade'].isin(branch_selector)]
+      df_appointments_direct_costs = df_appointments_direct_costs.loc[df_appointments_direct_costs['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_direct_costs)
 
   elif "Anual" not in month_selector and "TODAS" in branch_selector:
@@ -70,7 +70,7 @@ elif appointments_option == "Custos Diretos":
 
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_appointments_direct_costs = df_appointments_direct_costs.loc[df_appointments_direct_costs['Mês Atendimento'].isin(month_selector) &
-                                                          df_appointments_direct_costs['Unidade'].isin(branch_selector)]
+                                                          df_appointments_direct_costs['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_direct_costs)
 
 elif appointments_option == "Mais Atendidos":
@@ -84,7 +84,7 @@ elif appointments_option == "Mais Atendidos":
       st.dataframe(df_appointments_main_served_procedeures)
 
   elif "Anual" in month_selector and "TODAS" not in branch_selector:
-      df_appointments_main_served_procedeures = df_appointments_main_served_procedeures.loc[df_appointments_main_served_procedeures['Unidade'].isin(branch_selector)]
+      df_appointments_main_served_procedeures = df_appointments_main_served_procedeures.loc[df_appointments_main_served_procedeures['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_main_served_procedeures)
 
   elif "Anual" not in month_selector and "TODAS" in branch_selector:
@@ -93,7 +93,7 @@ elif appointments_option == "Mais Atendidos":
 
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_appointments_main_served_procedeures = df_appointments_main_served_procedeures.loc[df_appointments_main_served_procedeures['Mês Atendimento'].isin(month_selector) &
-                                                                      df_appointments_main_served_procedeures['Unidade'].isin(branch_selector)]
+                                                                      df_appointments_main_served_procedeures['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_main_served_procedeures)
 
 elif appointments_option == "Tempo de Agenda":
@@ -107,7 +107,7 @@ elif appointments_option == "Tempo de Agenda":
       st.dataframe(df_appointmentes_time_taken_from_schedule)
 
   elif "Anual" in month_selector and "TODAS" not in branch_selector:
-      df_appointmentes_time_taken_from_schedule = df_appointmentes_time_taken_from_schedule.loc[df_appointmentes_time_taken_from_schedule['Unidade'].isin(branch_selector)]
+      df_appointmentes_time_taken_from_schedule = df_appointmentes_time_taken_from_schedule.loc[df_appointmentes_time_taken_from_schedule['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointmentes_time_taken_from_schedule)
 
   elif "Anual" not in month_selector and "TODAS" in branch_selector:
@@ -116,7 +116,7 @@ elif appointments_option == "Tempo de Agenda":
 
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_appointmentes_time_taken_from_schedule = df_appointmentes_time_taken_from_schedule.loc[df_appointmentes_time_taken_from_schedule['Mês Atendimento'].isin(month_selector) &
-                                                          df_appointmentes_time_taken_from_schedule['Unidade'].isin(branch_selector)]
+                                                          df_appointmentes_time_taken_from_schedule['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointmentes_time_taken_from_schedule)
 
 elif appointments_option == "Análise de Cortesia":
@@ -130,7 +130,7 @@ elif appointments_option == "Análise de Cortesia":
       st.dataframe(df_appointments_cortesy_analysis)
 
   elif "Anual" in month_selector and "TODAS" not in branch_selector:
-      df_appointments_cortesy_analysis = df_appointments_cortesy_analysis.loc[df_appointments_cortesy_analysis['Unidade'].isin(branch_selector)]
+      df_appointments_cortesy_analysis = df_appointments_cortesy_analysis.loc[df_appointments_cortesy_analysis['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_cortesy_analysis)
 
   elif "Anual" not in month_selector and "TODAS" in branch_selector:
@@ -139,7 +139,7 @@ elif appointments_option == "Análise de Cortesia":
 
   elif "Anual" not in month_selector and "TODAS" not in branch_selector:
       df_appointments_cortesy_analysis = df_appointments_cortesy_analysis.loc[df_appointments_cortesy_analysis['Mês Atendimento'].isin(month_selector) &
-                                                          df_appointments_cortesy_analysis['Unidade'].isin(branch_selector)]
+                                                          df_appointments_cortesy_analysis['Unidade do agendamento'].isin(branch_selector)]
       st.dataframe(df_appointments_cortesy_analysis)
 
 else:
