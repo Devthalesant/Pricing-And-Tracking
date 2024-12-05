@@ -16,15 +16,25 @@ df_sales = df_sales.loc[df_sales['CORTESIA'] != True]
 groupby_for_sales = df_sales.groupby(["Unidade", "Mês venda", "Grupo"]).agg({"Valor liquido item": "sum","Quantidade" : "sum",
                                                                                       "Valor tabela item" : "sum", "Custo Direto" : "sum"}).reset_index()
 
-# Evolution od Sales:
-
 groupby_for_sales_evolution = groupby_for_sales.groupby(["Grupo", "Mês venda"]).agg({"Valor liquido item" : "sum"}).reset_index()
+
+# Evolution Sales 
+  #Medicina Estética
 
 sales_evolution_med = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "MEDICINA ESTÉTICA"]
 
-# Convertendo a coluna 'mês' para categoria com a ordem definida
 sales_evolution_med['Mês venda'] = pd.Categorical(sales_evolution_med['Mês venda'], categories= months_order, ordered=True)
 sales_evolution_med = sales_evolution_med.sort_values(by="Mês venda")
 
 st.subheader("Gráfico de Evolução de Vendas - Medicina Estética")
 st.bar_chart(sales_evolution_med, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
+
+  #ESTÉTICA
+
+sales_evolution_est = groupby_for_sales_evolution.loc[groupby_for_sales_evolution['Grupo'] == "ESTÉTICA"]
+
+sales_evolution_est['Mês venda'] = pd.Categorical(sales_evolution_est['Mês venda'], categories= months_order, ordered=True)
+sales_evolution_est = sales_evolution_est.sort_values(by="Mês venda")
+
+st.subheader("Gráfico de Evolução de Vendas - Estética")
+st.bar_chart(sales_evolution_est, x="Mês venda", y="Valor liquido item",color =(160, 32, 240, 1.0))
