@@ -19,37 +19,7 @@ def get_dataframe_from_mongodb(collection_name, database_name, query={}):
         dataframe = pd.DataFrame()
 
     print(f"Fetched {len(dataframe)} records from {database_name} : {collection_name}")
-
-# Getting a dataframe of billchaeges
-    billcharges_df = get_dataframe_from_mongodb(collection_name="billcharges_db", database_name="dash_midia")
-    # Dropping dulicates from quote_ID because there is all i need in quote_items:
-    billcharges_df.drop_duplicates(subset=['quote_id'],keep='first', inplace=True)
-    items = []
-    # Ajustando a regex para capturar corretamente todos os elementos
-    for item in row['quote_items'].split(';'):
-        item = item.strip() # TIRA SPACE
-        if item:
-            match = re.match(r'^(.*) \(Qty:\s*(\d+),\s*Amount:\s*(\d+),\s*discountAmount:\s*(\d+)\)', item)
-
-            # See if it matched correctly
-            if match:
-                item_name = match.group(1)     # Nome do item
-                qty = match.group(2)            # Quantidade
-                amount = match.group(3)         # Valor (Amount)
-                discount_amount = match.group(4) # Desconto
-
-                # # Debugging - print the matched values
-                # print("Matched:", item_name, qty, amount, discount_amount)
-
-                items.append({
-                    'item_name': item_name,
-                    'quantity': int(qty),
-                    'item-amount': int(amount),               # Convertendo para inteiro
-                    'discount_amount': int(discount_amount), # Convertendo para inteiro
-                    **{col: row[col] for col in billcharges_df.columns if col != 'quote_items'}
-                })
-
-    return dataframe,items
+    return dataframe
 
 # Function to extract the informations at the quote_itens
 def extract_quote_items(row):
