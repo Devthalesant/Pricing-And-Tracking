@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import random
-from Pricing&Tracking.py import treating_values
+from Pricing_and_Tracking.py import treating_values
 
 treating_values()
 
