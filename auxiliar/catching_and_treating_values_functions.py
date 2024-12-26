@@ -52,7 +52,7 @@ def extract_quote_items(row):
 
      # function that calls the treated updated dataframe
 
-def treating_values():
+def treating_values(billcharges_df):
 
   # Dropping dulicates from quote_ID because there is all i need in quote_items:
   billcharges_df.drop_duplicates(subset=['quote_id'],keep='first', inplace=True)
