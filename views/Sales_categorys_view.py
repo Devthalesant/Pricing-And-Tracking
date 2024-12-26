@@ -5,7 +5,7 @@ import pandas as pd
 Month_list = ["Anual","Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
 branch_list = ["TODAS","ALPHAVILLE","BELO HORIZONTE","CAMPINAS","COPACABANA","IPIRANGA","ITAIM","JARDINS","LAPA","LONDRINA","MOEMA","MOOCA","OSASCO",
                "RIBEIRÃO PRETO","SANTO AMARO","SANTOS","SOROCABA","SÃO BERNARDO","TATUAPÉ","TIJUCA","TUCURUVI","VILA MASCOTE"]
-months_order = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+months_order = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
                'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
 # Here i wanna show the evolution of Sales Costs of Sales and serve, contribuition margin, ...
@@ -20,7 +20,7 @@ groupby_for_sales = df_sales.groupby(["Unidade", "Mês venda", "Grupo"]).agg({"V
 
 groupby_for_sales_evolution = groupby_for_sales.groupby(["Grupo", "Mês venda"]).agg({"Valor liquido item" : "sum"}).reset_index()
 
-# Evolution Sales 
+# Evolution Sales
 
   #General
 

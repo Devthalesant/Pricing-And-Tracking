@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- PAGE SETUP ---
 page_1 = st.Page(
-    "views/sales_view.py",
+    "views/general_view.py",
     title="Análises",
     icon=":material/thumb_up:"
 )
