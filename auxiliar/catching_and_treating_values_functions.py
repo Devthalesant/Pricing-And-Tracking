@@ -1,5 +1,7 @@
 from pymongo import MongoClient, UpdateOne
 import pandas as pd
+import re
+
 # Function to get data from Mongo
 
 def get_dataframe_from_mongodb(collection_name, database_name, query={}):
