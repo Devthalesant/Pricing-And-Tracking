@@ -1,3 +1,4 @@
+from pymongo import MongoClient, UpdateOne
 from auxiliar.catching_and_treating_values_functions import *
 import streamlit as st
 import pandas as pd
