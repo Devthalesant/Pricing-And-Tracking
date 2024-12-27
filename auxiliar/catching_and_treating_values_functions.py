@@ -24,7 +24,7 @@ def get_dataframe_from_mongodb(collection_name, database_name, query={}):
     return dataframe
 
 # Function to extract the informations at the quote_itens
-def extract_quote_items(row):
+def extract_quote_items(row,df):
     items = []
     # Ajustando a regex para capturar corretamente todos os elementos
     for item in row['quote_items'].split(';'):
@@ -47,7 +47,7 @@ def extract_quote_items(row):
                     'quantity': int(qty),
                     'item-amount': int(amount),               # Convertendo para inteiro
                     'discount_amount': int(discount_amount), # Convertendo para inteiro
-                    **{col: row[col] for col in billcharges_df.columns if col != 'quote_items'}
+                    **{col: row[col] for col in df.columns if col != 'quote_items'}
                 })
 
     return items
@@ -62,7 +62,7 @@ def treating_values(billcharges_df):
   # Aplicar a função para cada linha do DataFrame
   rows = []
   for _, row in billcharges_df.iterrows():
-      extracted_items = extract_quote_items(row)
+      extracted_items = extract_quote_items(row,billcharges_df)
       rows.extend(extracted_items)
 
   # Criar um novo DataFrame com os dados extraídos
