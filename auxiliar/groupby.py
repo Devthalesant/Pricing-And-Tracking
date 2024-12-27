@@ -10,6 +10,7 @@ def grafico_barras_vendas(new_df):
   new_df['PERIODO'] = new_df['DATA'].dt.to_period('M')
 
   barras_df = new_df.groupby(['PERIODO']).agg({'TOTAL LÍQUIDO ITEM': 'sum'})
+  barras_df['PERIODO'] = barras_df['PERIDO'].astype(str)
 
   fig = px.bar(
             new_df,
