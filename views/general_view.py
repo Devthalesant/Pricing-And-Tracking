@@ -14,7 +14,7 @@ var = grafico_barras_vendas(new_df)
 
 st.dataframe(var)
 st.dataframe(new_df)
-st.dash_midiaataFrame(billcharges_df)
+st.dataframe(billcharges_df)
 
 teste = new_df['STATUS'].unique()
 
