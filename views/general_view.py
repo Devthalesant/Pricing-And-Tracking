@@ -14,3 +14,4 @@ var = grafico_barras_vendas(new_df)
 
 st.dataframe(var)
 st.dataframe(new_df)
+st.DataFrame(billcharges_df)
