@@ -10,12 +10,6 @@ st.title("Visão Geral - Perído TESTE")
 billcharges_df = get_dataframe_from_mongodb(collection_name="billcharges_db", database_name="dash_midia")
 
 new_df = treating_values(billcharges_df)
-var = grafico_barras_vendas(new_df)
+grafico = grafico_barras_vendas(new_df)
 
-st.dataframe(var)
-st.dataframe(new_df)
-st.dataframe(billcharges_df)
-
-teste = new_df['STATUS'].unique()
-
-st.write(teste)
+st.plotly_chart(grafico, use_container_width=True)

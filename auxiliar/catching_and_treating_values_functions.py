@@ -81,7 +81,7 @@ def treating_values(billcharges_df):
                         'discount_amount':'DISCONTO ITEM','payment_method': 'FORMA DE PAGAMENTO','installments':'PARCELAS',
                         'is_paid':'PAGO?','total_amount' : 'TOTAL DO ORÇAMENTO',"date" : "DATA","status" : "STATUS" }, inplace=True)
 
-  # 
+  # Tirar homa, PG faz unique e tira o que vc ver errado.
   new_df = new_df.loc[new_df["STATUS"] == "completed"]
   #bringing all dictionaries for the code
   custos_dict, Sales_dic, Appointments_dic, duration_dic, Month_dic = bring_dictionaries()

@@ -1,6 +1,7 @@
 from pymongo import MongoClient, UpdateOne
 import pandas as pd
 import re
+import plotly.express as px
 
 
 def grafico_barras_vendas(new_df): 
@@ -10,4 +11,11 @@ def grafico_barras_vendas(new_df):
 
   barras_df = new_df.groupby(['PERIODO']).agg({'TOTAL LÍQUIDO ITEM': 'sum'})
 
-  return barras_df
+  fig = px.bar(
+            new_df,
+            x='PERIODO',
+            y='TOTAL LÍQUIDO ITEM',
+            title='GRÁFICO VENDAS GERAL'
+        )
+
+  return fig
