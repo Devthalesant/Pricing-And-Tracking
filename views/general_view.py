@@ -5,11 +5,12 @@ import streamlit as st
 import pandas as pd
 import re
 
-st.title("Visão Geral - Perído ARROBA")
+st.title("Visão Geral - Perído bod")
 # Getting a dataframe of billchaeges
 billcharges_df = get_dataframe_from_mongodb(collection_name="billcharges_db", database_name="dash_midia")
 
 new_df = treating_values(billcharges_df)
-grafico = grafico_barras_vendas(new_df)
+st.dataframe(new_df)
+# grafico = grafico_barras_vendas(new_df)
 
-st.plotly_chart(grafico, use_container_width=True)
+# st.plotly_chart(grafico, use_container_width=True)
