@@ -13,4 +13,4 @@ new_df = treating_values(billcharges_df)
 var = grafico_barras_vendas(new_df)
 
 st.dataframe(var)
-
+st.dataframe(new_df)
